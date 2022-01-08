@@ -2,8 +2,7 @@
 
 import socket
 from config import HOST, PORT
-from utils import KB, read_file_to_buf, MB, BYTE
-from math import ceil
+from utils import KB, read_file_to_buf
 
 # instruction
 # 1. open connection
