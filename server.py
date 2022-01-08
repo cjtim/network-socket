@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import socket
+from socket import socket, AF_INET, SOCK_STREAM
 from config import HOST, PORT
 from utils import read_file_to_buf
 
@@ -16,7 +16,7 @@ FILE_TO_SEND = "test_file.png"
 def main():
     fileBytes = read_file_to_buf(FILE_TO_SEND)
     
-    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+    with socket(AF_INET, SOCK_STREAM) as s:
         s.bind((HOST, PORT))
         # start listen connection
         s.listen() 

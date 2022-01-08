@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 
-import socket
+from socket import socket, AF_INET, SOCK_STREAM
 from config import HOST, PORT
 from utils import BYTE, buf_to_file
 
 OUTPUT_RECEIVED_FILE="output.png"
 
 def main():
-    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+    with socket(AF_INET, SOCK_STREAM) as s:
         s.connect((HOST, PORT))
         s.sendall(b'f')
 
