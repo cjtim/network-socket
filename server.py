@@ -19,6 +19,7 @@ def main():
         s.bind((HOST, PORT))
         # start listen connection
         s.listen() 
+        print('wait for client.py...')
         # Wait for an incoming connection
         conn, addr = s.accept()
         with conn:
