@@ -21,7 +21,7 @@ def main():
 
         filename, filebyte = decode_headers(fileBytes)
         # save to file
-        print(f'Received saved to {filename}')
+        print(f'saved to {filename}')
         buf_to_file(filename, filebyte)
 
 if __name__ == '__main__':
