@@ -1,7 +1,7 @@
 
 # network-socket
 
-File sharing protocal with python socket
+File sharing protocol with python socket
 * Send with TCP connection
 
 ## How to run
@@ -13,5 +13,6 @@ Client side
 
 
 ## Contributor
-1. 6210407960 ธนกร วงษ์สนิท
-2. 6210402364 จิณณะ ชดช้อย
+1. 6210402364 จิณณะ ชดช้อย
+2. 6210407960 ธนกร วงษ์สนิท
+ 
