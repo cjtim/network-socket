@@ -2,7 +2,7 @@
 
 import socket
 from config import HOST, PORT
-from utils import KB, read_file_to_buf
+from utils import read_file_to_buf
 
 # instruction
 # 1. open connection
@@ -15,7 +15,7 @@ FILE_TO_SEND = "test_file.png"
 
 def main():
     fileBytes = read_file_to_buf(FILE_TO_SEND)
-
+    
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         s.bind((HOST, PORT))
         # start listen connection

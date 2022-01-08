@@ -18,6 +18,7 @@ def main():
                 fileBytes += data
             except ConnectionResetError as e:
                 break
+        # save to file
         buf_to_file(OUTPUT_RECEIVED_FILE, fileBytes)
 
 if __name__ == '__main__':
