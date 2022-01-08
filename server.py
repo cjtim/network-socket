@@ -16,20 +16,12 @@ FILE_TO_SEND = "test_file.png"
 
 def main():
     fileBytes = read_file_to_buf(FILE_TO_SEND)
-    size = len(fileBytes)
 
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         s.bind((HOST, PORT))
         # start listen connection
         s.listen() 
         # Wait for an incoming connection
-        conn, addr = s.accept()
-        with conn:
-            print('Receive ping for size in MB from', addr)
-            sizeInMB = ceil(size / MB)
-            respMB = int.to_bytes(sizeInMB, byteorder='big', length=BYTE)
-            conn.sendall(respMB)
-
         conn, addr = s.accept()
         with conn:
             print('Sending file to', addr)
