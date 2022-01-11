@@ -3,7 +3,7 @@
 from time import sleep
 from socket import socket, AF_INET, SOCK_STREAM
 from config import HOST, PORT
-from utils import BYTE, buf_to_file, decode_headers
+from utils import MB, buf_to_file, decode_headers
 
 def main():
     with socket(AF_INET, SOCK_STREAM) as s:       
@@ -14,7 +14,7 @@ def main():
         fileBytes: bytes = b''
         while True:
             try:
-                data = s.recv(BYTE)
+                data = s.recv(MB)
                 fileBytes += data
             except ConnectionResetError:
                 break
