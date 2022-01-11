@@ -5,9 +5,9 @@ BYTE = 1024
 KB = 1024 * BYTE
 MB = 1024 * KB
 
-def read_file_to_buf(filename: str) -> bytes:
+def read_file_to_buf(filename: str) -> Tuple[str, bytes]:
     with open(file=filename, mode="rb") as f:
-        return f.read()
+        return filename.split('/').pop(), f.read()
 
 def buf_to_file(output_file: str, buf: bytes):
     with open(file=output_file, mode="wb") as f:
